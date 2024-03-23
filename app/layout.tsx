@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin-ext"], weight: ["400"] });
 
 export const metadata: Metadata = {
-  title: "Lembaga Amil Zakat Sinergi",
+  title: "LAZ Sinergi",
   description: "Organization profile",
 };
 
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning={true}>
         {children}
       </body>
     </html>

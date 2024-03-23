@@ -23,6 +23,8 @@ import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import MosqueRoundedIcon from '@mui/icons-material/MosqueRounded';
 import TextSnippetRoundedIcon from '@mui/icons-material/TextSnippetRounded';
 import PaymentsRoundedIcon from '@mui/icons-material/PaymentsRounded';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 
 const navListMenuItems = [
@@ -52,6 +54,7 @@ const navListMenuItems = [
         icon: MosqueRoundedIcon,
     },
 ];
+
 const navListMenuItems2 = [
     {
         title: "Laporan Keuangan",
@@ -138,6 +141,7 @@ function NavListMenu() {
         </React.Fragment>
     );
 }
+
 function NavListMenu2() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -221,7 +225,7 @@ function NavList() {
                 variant="small"
                 color="blue-gray"
                 className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Beranda</ListItem>
+                <ListItem className="flex items-center gap-2 py-2 pr-4 duration-300 ease-in-out" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Beranda</ListItem>
             </Typography>
             <Typography
                 as="a"
@@ -229,7 +233,7 @@ function NavList() {
                 variant="small"
                 color="blue-gray"
                 className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Tentang Kami</ListItem>
+                <ListItem className="flex items-center gap-2 py-2 pr-4 duration-300 ease-in-out" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Tentang Kami</ListItem>
             </Typography>
             <NavListMenu />
             <Typography
@@ -238,7 +242,7 @@ function NavList() {
                 variant="small"
                 color="blue-gray"
                 className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                <ListItem className="flex items-center gap-2 py-2 pr-4 duration-300 ease-in-out" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     Zakat
                 </ListItem>
             </Typography>
@@ -250,6 +254,7 @@ function NavList() {
 const Topbar = () => {
 
     const [openNav, setOpenNav] = React.useState(false);
+    const pathname = usePathname();
 
     React.useEffect(() => {
         window.addEventListener(
@@ -261,13 +266,17 @@ const Topbar = () => {
     return (
         <Navbar className="mx-auto max-w-screen-xl px-4 py-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
             <div className="flex items-center justify-between text-blue-gray-900">
-                <Typography
-                    as="a"
-                    href="#"
-                    variant="h6"
-                    className="mr-4 cursor-pointer py-1.5 lg:ml-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                >
-                    LAZ Sinergi
-                </Typography>
+                <Link href={"/dashboard/home"}
+                    className={`group relative flex items-center gap-2.5 rounded-full px-4 py-2 font-medium duration-300 ease-in-out hover:bg-blue-gray-100 
+${pathname === "/dashboard/home"}`}>
+                    <Typography
+                        as="a"
+                        href="#"
+                        variant="h6"
+                        className="mr-4 cursor-pointer py-1.5 lg:ml-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                >
+                        LAZ Sinergi
+                    </Typography>
+                </Link>
                 <div className="hidden lg:block">
                     <NavList />
                 </div>

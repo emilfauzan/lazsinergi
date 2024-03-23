@@ -1,12 +1,10 @@
 "use client"
 import React from 'react'
-import Topbar from '@/components/navigation/Topbar/Topbar';
 
 function Home() {
     return (
         <>
-            <Topbar />
-            <div color='brown'>
+            <div className='bg-brown-200'>
                 <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
             </div>
             <div>
