@@ -2,127 +2,291 @@
 import React from 'react'
 import {
     Navbar,
-    MobileNav,
+    Collapse,
     Typography,
     Button,
     IconButton,
-    Card,
+    List,
+    ListItem,
+    Menu,
+    MenuHandler,
+    MenuList,
+    MenuItem,
 } from "@material-tailwind/react";
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
+import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
+import LocalHospitalRoundedIcon from '@mui/icons-material/LocalHospitalRounded';
+import Diversity2RoundedIcon from '@mui/icons-material/Diversity2Rounded';
+import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
+import MosqueRoundedIcon from '@mui/icons-material/MosqueRounded';
+import TextSnippetRoundedIcon from '@mui/icons-material/TextSnippetRounded';
+import PaymentsRoundedIcon from '@mui/icons-material/PaymentsRounded';
+
+
+const navListMenuItems = [
+    {
+        title: "Pendidikan",
+        description: "Find the perfect solution for your needs.",
+        icon: SchoolRoundedIcon,
+    },
+    {
+        title: "Kesehatan",
+        description: "Meet and learn about our dedication",
+        icon: LocalHospitalRoundedIcon,
+    },
+    {
+        title: "Kemanusiaan",
+        description: "Find the perfect solution for your needs.",
+        icon: Diversity2RoundedIcon,
+    },
+    {
+        title: "Ekonomi",
+        description: "Learn how we can help you achieve your goals.",
+        icon: TrendingUpRoundedIcon,
+    },
+    {
+        title: "Dakwah",
+        description: "Reach out to us for assistance or inquiries",
+        icon: MosqueRoundedIcon,
+    },
+];
+const navListMenuItems2 = [
+    {
+        title: "Laporan Keuangan",
+        description: "Find the perfect solution for your needs.",
+        icon: TextSnippetRoundedIcon,
+    },
+    {
+        title: "Rekening Lengkap",
+        description: "Meet and learn about our dedication",
+        icon: PaymentsRoundedIcon,
+    },
+];
+
+function NavListMenu() {
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+    const renderItems = navListMenuItems.map(
+        ({ icon, title, description }, key) => (
+            <a href="#" key={key}>
+                <MenuItem className="flex items-center gap-3 rounded-lg" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
+                        {" "}
+                        {React.createElement(icon, {
+                            strokeWidth: 2,
+                            className: "h-6 text-gray-900 w-6",
+                        })}
+                    </div>
+                    <div>
+                        <Typography
+                            variant="h6"
+                            color="blue-gray"
+                            className="flex items-center text-sm font-bold" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                        >
+                            {title}
+                        </Typography>
+                        <Typography
+                            variant="paragraph"
+                            className="text-xs !font-medium text-blue-gray-500" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                        >
+                            {description}
+                        </Typography>
+                    </div>
+                </MenuItem>
+            </a>
+        ),
+    );
+
+    return (
+        <React.Fragment>
+            <Menu
+                open={isMenuOpen}
+                handler={setIsMenuOpen}
+                offset={{ mainAxis: 20 }}
+                placement="bottom"
+                allowHover={true}
+            >
+                <MenuHandler>
+                    <Typography as="div" variant="small" className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                        <ListItem
+                            className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
+                            selected={isMenuOpen || isMobileMenuOpen}
+                            onClick={() => setIsMobileMenuOpen((cur) => !cur)} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                        >
+                            Program
+                            <KeyboardArrowDownRoundedIcon
+                                strokeWidth={2.5}
+                                className={`hidden h-3 w-3 transition-transform lg:block ${isMenuOpen ? "rotate-180" : ""
+                                    }`}
+                            />
+                            <KeyboardArrowDownRoundedIcon
+                                strokeWidth={2.5}
+                                className={`block h-3 w-3 transition-transform lg:hidden ${isMobileMenuOpen ? "rotate-180" : ""
+                                    }`}
+                            />
+                        </ListItem>
+                    </Typography>
+                </MenuHandler>
+                <MenuList className="hidden max-w-screen-xl rounded-xl lg:block" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <ul className="grid grid-cols-1 gap-y-2 outline-none outline-0">
+                        {renderItems}
+                    </ul>
+                </MenuList>
+            </Menu>
+            <div className="block lg:hidden">
+                <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
+            </div>
+        </React.Fragment>
+    );
+}
+function NavListMenu2() {
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+    const renderItems = navListMenuItems2.map(
+        ({ icon, title, description }, key) => (
+            <a href="#" key={key}>
+                <MenuItem className="flex items-center gap-3 rounded-lg" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
+                        {" "}
+                        {React.createElement(icon, {
+                            strokeWidth: 2,
+                            className: "h-6 text-gray-900 w-6",
+                        })}
+                    </div>
+                    <div>
+                        <Typography
+                            variant="h6"
+                            color="blue-gray"
+                            className="flex items-center text-sm font-bold" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                        >
+                            {title}
+                        </Typography>
+                        <Typography
+                            variant="paragraph"
+                            className="text-xs !font-medium text-blue-gray-500" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                        >
+                            {description}
+                        </Typography>
+                    </div>
+                </MenuItem>
+            </a>
+        ),
+    );
+
+    return (
+        <React.Fragment>
+            <Menu
+                open={isMenuOpen}
+                handler={setIsMenuOpen}
+                offset={{ mainAxis: 20 }}
+                placement="bottom"
+                allowHover={true}
+            >
+                <MenuHandler>
+                    <Typography as="div" variant="small" className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                        <ListItem
+                            className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
+                            selected={isMenuOpen || isMobileMenuOpen}
+                            onClick={() => setIsMobileMenuOpen((cur) => !cur)} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                        >
+                            Layanan
+                            <KeyboardArrowDownRoundedIcon
+                                strokeWidth={2.5}
+                                className={`hidden h-3 w-3 transition-transform lg:block ${isMenuOpen ? "rotate-180" : ""
+                                    }`}
+                            />
+                            <KeyboardArrowDownRoundedIcon
+                                strokeWidth={2.5}
+                                className={`block h-3 w-3 transition-transform lg:hidden ${isMobileMenuOpen ? "rotate-180" : ""
+                                    }`}
+                            />
+                        </ListItem>
+                    </Typography>
+                </MenuHandler>
+                <MenuList className="hidden max-w-screen-xl rounded-xl lg:block" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <ul className="grid grid-cols-1 gap-y-2 outline-none outline-0">
+                        {renderItems}
+                    </ul>
+                </MenuList>
+            </Menu>
+            <div className="block lg:hidden">
+                <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
+            </div>
+        </React.Fragment>
+    );
+}
+
+function NavList() {
+    return (
+        <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+            <Typography
+                as="a"
+                href="#"
+                variant="small"
+                color="blue-gray"
+                className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
+                <ListItem className="flex items-center gap-2 py-2 pr-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Beranda</ListItem>
+            </Typography>
+            <Typography
+                as="a"
+                href="#"
+                variant="small"
+                color="blue-gray"
+                className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
+                <ListItem className="flex items-center gap-2 py-2 pr-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Tentang Kami</ListItem>
+            </Typography>
+            <NavListMenu />
+            <Typography
+                as="a"
+                href="#"
+                variant="small"
+                color="blue-gray"
+                className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
+                <ListItem className="flex items-center gap-2 py-2 pr-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    Zakat
+                </ListItem>
+            </Typography>
+            <NavListMenu2 />
+        </List>
+    );
+}
 
 const Topbar = () => {
-    return (
-        <>
-        <div>
-            <div>
-                <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
-                    <div className="flex items-center justify-between text-blue-gray-900">
-                        <Typography
-                            as="a"
-                            href="#"
-                            className="mr-4 cursor-pointer py-1.5 font-medium"
-                        >
-                            Material Tailwind
-                        </Typography>
-                        <div className="flex items-center gap-4">
-                            <div className="mr-4 hidden lg:block">{navList}</div>
-                            <div className="flex items-center gap-x-1">
-                                <Button
-                                    variant="text"
-                                    size="sm"
-                                    className="hidden lg:inline-block"
-                                >
-                                    <span>Log In</span>
-                                </Button>
-                                <Button
-                                    variant="gradient"
-                                    size="sm"
-                                    className="hidden lg:inline-block"
-                                >
-                                    <span>Sign in</span>
-                                </Button>
-                            </div>
-                            <IconButton
-                                variant="text"
-                                className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-                                ripple={false}
-                                onClick={() => setOpenNav(!openNav)}
-                            >
-                                {openNav ? (
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        className="h-6 w-6"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M6 18L18 6M6 6l12 12"
-                                        />
-                                    </svg>
-                                ) : (
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-6 w-6"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M4 6h16M4 12h16M4 18h16"
-                                        />
-                                    </svg>
-                                )}
-                            </IconButton>
-                        </div>
-                    </div>
-                    <MobileNav open={openNav}>
-                        {navList}
-                        <div className="flex items-center gap-x-1">
-                            <Button fullWidth variant="text" size="sm" className="">
-                                <span>Log In</span>
-                            </Button>
-                            <Button fullWidth variant="gradient" size="sm" className="">
-                                <span>Sign in</span>
-                            </Button>
-                        </div>
-                    </MobileNav>
-                </Navbar>
-            </div>
 
-            <div className="mx-auto max-w-screen-md py-12">
-                <Card className="mb-12 overflow-hidden">
-                    <img
-                        alt="nature"
-                        className="h-[32rem] w-full object-cover object-center"
-                        src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2717&q=80"
-                    />
-                </Card>
-                <Typography variant="h2" color="blue-gray" className="mb-2">
-                    What is Material Tailwind
+    const [openNav, setOpenNav] = React.useState(false);
+
+    React.useEffect(() => {
+        window.addEventListener(
+            "resize",
+            () => window.innerWidth >= 960 && setOpenNav(false),
+        );
+    }, []);
+
+    return (
+        <Navbar className="mx-auto max-w-screen-xl px-4 py-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+            <div className="flex items-center justify-between text-blue-gray-900">
+                <Typography
+                    as="a"
+                    href="#"
+                    variant="h6"
+                    className="mr-4 cursor-pointer py-1.5 lg:ml-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                >
+                    LAZ Sinergi
                 </Typography>
-                <Typography color="gray" className="font-normal">
-                    Can you help me out? you will get a lot of free exposure doing this
-                    can my website be in english?. There is too much white space do less
-                    with more, so that will be a conversation piece can you rework to make
-                    the pizza look more delicious other agencies charge much lesser can
-                    you make the blue bluer?. I think we need to start from scratch can my
-                    website be in english?, yet make it sexy i&apos;ll pay you in a week
-                    we don&apos;t need to pay upfront i hope you understand can you make
-                    it stand out more?. Make the font bigger can you help me out? you will
-                    get a lot of free exposure doing this that&apos;s going to be a chunk
-                    of change other agencies charge much lesser. Are you busy this
-                    weekend? I have a new project with a tight deadline that&apos;s going
-                    to be a chunk of change. There are more projects lined up charge extra
-                    the next time.
-                </Typography>
+                <div className="hidden lg:block">
+                    <NavList />
+                </div>
+                <IconButton
+                    variant="text"
+                    color="blue-gray"
+                    className="lg:hidden"
+                    onClick={() => setOpenNav(!openNav)} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                >
+                    {openNav ? (
+                        <CloseIcon className="h-6 w-6" strokeWidth={2} />
+                    ) : (
+                        <MenuIcon className="h-6 w-6" strokeWidth={2} />
+                    )}
+                </IconButton>
             </div>
-        </div>
-        </>
+            <Collapse open={openNav}>
+                <NavList />
+            </Collapse>
+        </Navbar>
     )
 }
 
