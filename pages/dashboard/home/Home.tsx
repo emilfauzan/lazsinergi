@@ -11,13 +11,21 @@ function Home() {
                 <h2 className='my-4 text-center mx-6'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
             </div>
 
+            {/* Tabel */}
+            <div className='my-4 mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10'>
+                <h2 className='my-4 text-center'>Lorem, ipsum.</h2>
+                <div className='grid grid-cols-1'>
+                    <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, enim eaque? Adipisci ad excepturi quidem distinctio repellat iure aliquid temporibus, debitis consequatur reiciendis optio quod, sit dolorum earum repellendus. Dolorum, tenetur tempore quia veniam aspernatur odit ad quibusdam cumque accusamus reiciendis? Dolor dolorem eligendi quibusdam sapiente! Quis voluptas incidunt iste, repellat quibusdam a fugiat. Dolorum, ipsam consequatur cupiditate corporis accusamus deleniti! Vero veniam corporis, dolores praesentium quasi nostrum facilis eligendi sunt dolorum saepe, consequuntur reprehenderit doloribus quidem repudiandae unde, aliquid fugiat quaerat velit? Praesentium impedit veniam aliquid dolore, nam, quae quisquam animi eaque tenetur rem recusandae quidem at dicta consequuntur!</h2>
+                </div>
+            </div>
+
             {/* Capaian */}
             <div className='my-4 mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10'>
                 <h2 className='my-4 text-center'>Lorem, ipsum.</h2>
                 <div className='grid grid-cols-3 gap-6'>
-                    <h2 className='py-4 text-center bg-orange-100/50 '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
-                    <h2 className='py-4 text-center bg-orange-100/50 '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
-                    <h2 className='py-4 text-center bg-orange-100/50 '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                    <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                    <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                    <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
                 </div>
             </div>
 
