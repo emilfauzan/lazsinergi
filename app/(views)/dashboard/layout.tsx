@@ -1,5 +1,6 @@
 "use client"
 
+import Footer from '@/components/common/Footer/Footer'
 import Topbar from '@/components/navigation/Topbar/Topbar'
 import React, { ReactNode } from 'react'
 
@@ -18,6 +19,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                         </div> */}
                             {children}
                         {/* Footer right here */}
+                        <Footer />
                     </div>
                 </div>
             </main >
