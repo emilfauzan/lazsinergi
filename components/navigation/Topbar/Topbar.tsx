@@ -26,32 +26,52 @@ import PaymentsRoundedIcon from '@mui/icons-material/PaymentsRounded';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+type GenerateHrefFunction = (programType: string) => string;
+type GenerateHref2Function = (layananType: string) => string;
+interface NavListMenuProps {
+    generateHref: GenerateHrefFunction;
+}
+interface NavListMenu2Props {
+    generateHref2: GenerateHref2Function;
+}
+
+const generateHref: GenerateHrefFunction = (programType) => {
+    return `/program/${programType}`;
+};
+const generateHref2: GenerateHref2Function = (layananType) => {
+    return `/layanan/${layananType}`;
+};
 
 const navListMenuItems = [
     {
         title: "Pendidikan",
         description: "Find the perfect solution for your needs.",
         icon: SchoolRoundedIcon,
+        href: "pendidikan"
     },
     {
         title: "Kesehatan",
         description: "Meet and learn about our dedication",
         icon: LocalHospitalRoundedIcon,
+        href: "kesehatan"
     },
     {
         title: "Kemanusiaan",
         description: "Find the perfect solution for your needs.",
         icon: Diversity2RoundedIcon,
+        href: "kemanusiaan"
     },
     {
         title: "Ekonomi",
         description: "Learn how we can help you achieve your goals.",
         icon: TrendingUpRoundedIcon,
+        href: "ekonomi"
     },
     {
         title: "Dakwah",
         description: "Reach out to us for assistance or inquiries",
         icon: MosqueRoundedIcon,
+        href: "dakwah"
     },
 ];
 
@@ -60,20 +80,23 @@ const navListMenuItems2 = [
         title: "Laporan Keuangan",
         description: "Find the perfect solution for your needs.",
         icon: TextSnippetRoundedIcon,
+        href: "laporan"
     },
     {
         title: "Rekening Lengkap",
         description: "Meet and learn about our dedication",
         icon: PaymentsRoundedIcon,
+        href: "rekening"
     },
 ];
 
-function NavListMenu() {
+const NavListMenu: React.FC<NavListMenuProps> = ({ generateHref }) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
     const renderItems = navListMenuItems.map(
-        ({ icon, title, description }, key) => (
-            <a href="#" key={key}>
+        ({ icon, title, description, href }, key) => (
+            <Link href={generateHref(href)} key={key} >
                 <MenuItem className="flex items-center gap-3 rounded-lg" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
                         {" "}
@@ -96,7 +119,7 @@ function NavListMenu() {
                         </Typography>
                     </div>
                 </MenuItem>
-            </a>
+            </Link >
         ),
     );
 
@@ -139,15 +162,15 @@ function NavListMenu() {
                 <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
             </div>
         </React.Fragment>
-    );
+    )
 }
 
-function NavListMenu2() {
+const NavListMenu2: React.FC<NavListMenu2Props> = ({ generateHref2 }) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
     const renderItems = navListMenuItems2.map(
-        ({ icon, title, description }, key) => (
-            <a href="#" key={key}>
+        ({ icon, title, description, href }, key) => (
+            <Link href={generateHref2(href)} key={key}>
                 <MenuItem className="flex items-center gap-3 rounded-lg" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
                         {" "}
@@ -170,7 +193,7 @@ function NavListMenu2() {
                         </Typography>
                     </div>
                 </MenuItem>
-            </a>
+            </Link>
         ),
     );
 
@@ -217,36 +240,50 @@ function NavListMenu2() {
 }
 
 function NavList() {
+    const pathname = usePathname();
+
     return (
         <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4 duration-300 ease-in-out" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Beranda</ListItem>
-            </Typography>
-            <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4 duration-300 ease-in-out" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Tentang Kami</ListItem>
-            </Typography>
-            <NavListMenu />
-            <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4 duration-300 ease-in-out" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                    Zakat
-                </ListItem>
-            </Typography>
-            <NavListMenu2 />
+            <Link href={"/"}
+                className={`group relative flex items-center 
+${pathname === "/dashboard/home"}`}>
+                <Typography
+                    as="a"
+                    href="#"
+                    variant="small"
+                    color="blue-gray"
+                    className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
+                    <ListItem className="flex items-center gap-2 py-2 pr-4 duration-300 ease-in-out" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Beranda</ListItem>
+                </Typography>
+            </Link>
+            <Link href={"/dashboard/about"}
+                className={`group relative flex items-center 
+${pathname === "/dashboard/about"}`}>
+                <Typography
+                    as="a"
+                    href="#"
+                    variant="small"
+                    color="blue-gray"
+                    className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
+                    <ListItem className="flex items-center gap-2 py-2 pr-4 duration-300 ease-in-out" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Tentang Kami</ListItem>
+                </Typography>
+            </Link>
+            <NavListMenu generateHref={generateHref} />
+            <Link href={"/dashboard/zakat"}
+                className={`group relative flex items-center 
+${pathname === "/dashboard/zakat"}`}>
+                <Typography
+                    as="a"
+                    href="#"
+                    variant="small"
+                    color="blue-gray"
+                    className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
+                    <ListItem className="flex items-center gap-2 py-2 pr-4 duration-300 ease-in-out" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                        Zakat
+                    </ListItem>
+                </Typography>
+            </Link>
+            <NavListMenu2 generateHref2={generateHref2} />
         </List>
     );
 }
@@ -266,7 +303,7 @@ const Topbar = () => {
     return (
         <Navbar className="mx-auto max-w-screen-xl px-4 py-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
             <div className="flex items-center justify-between text-blue-gray-900">
-                <Link href={"/dashboard/home"}
+                <Link href={"/"}
                     className={`group relative flex items-center gap-2.5 rounded-full px-4 py-2 font-medium duration-300 ease-in-out hover:bg-blue-gray-100 
 ${pathname === "/dashboard/home"}`}>
                     <Typography
