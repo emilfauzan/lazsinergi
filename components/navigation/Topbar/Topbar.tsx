@@ -25,6 +25,8 @@ import TextSnippetRoundedIcon from '@mui/icons-material/TextSnippetRounded';
 import PaymentsRoundedIcon from '@mui/icons-material/PaymentsRounded';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+import LAZSlogoname from "@/public/images/companyLogo/LAZSlogoname.png";
 
 type GenerateHrefFunction = (programType: string) => string;
 type GenerateHref2Function = (layananType: string) => string;
@@ -304,15 +306,21 @@ const Topbar = () => {
         <Navbar className="mx-auto max-w-screen-xl px-4 py-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
             <div className="flex items-center justify-between text-blue-gray-900">
                 <Link href={"/"}
-                    className={`group relative flex items-center gap-2.5 rounded-full px-4 py-2 font-medium duration-300 ease-in-out hover:bg-blue-gray-100 
+                    className={`group relative flex items-center gap-2.5 rounded-full px-4 py-2 font-medium duration-300 ease-in-out hover:bg-blue-gray-100/50 
 ${pathname === "/dashboard/home"}`}>
-                    <Typography
+                    {/* <Typography
                         as="a"
                         href="#"
                         variant="h6"
                         className="mr-4 cursor-pointer py-1.5 lg:ml-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                >
                         LAZ Sinergi
-                    </Typography>
+                    </Typography> */}
+                    <Image
+                            src={LAZSlogoname}
+                            width={32}
+                            height={32}
+                            alt="Company Logo"
+                        />
                 </Link>
                 <div className="hidden lg:block">
                     <NavList />
