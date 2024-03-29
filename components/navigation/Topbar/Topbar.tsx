@@ -4,7 +4,6 @@ import {
     Navbar,
     Collapse,
     Typography,
-    Button,
     IconButton,
     List,
     ListItem,
@@ -308,13 +307,6 @@ const Topbar = () => {
                 <Link href={"/"}
                     className={`group relative flex items-center gap-2.5 rounded-full px-4 py-2 font-medium duration-300 ease-in-out hover:bg-blue-gray-100/50 
 ${pathname === "/dashboard/home"}`}>
-                    {/* <Typography
-                        as="a"
-                        href="#"
-                        variant="h6"
-                        className="mr-4 cursor-pointer py-1.5 lg:ml-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                >
-                        LAZ Sinergi
-                    </Typography> */}
                     <Image
                             src={LAZSlogoname}
                             width={32}
@@ -325,17 +317,6 @@ ${pathname === "/dashboard/home"}`}>
                 <div className="hidden lg:block">
                     <NavList />
                 </div>
-                <IconButton
-                    variant="text"
-                    color="blue-gray"
-                    className="lg:hidden"
-                    onClick={() => setOpenNav(!openNav)} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                >
-                    {openNav ? (
-                        <CloseIcon className="h-6 w-6" strokeWidth={2} />
-                    ) : (
-                        <MenuIcon className="h-6 w-6" strokeWidth={2} />
-                    )}
-                </IconButton>
             </div>
             <Collapse open={openNav}>
                 <NavList />
