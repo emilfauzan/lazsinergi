@@ -9,18 +9,16 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     return (
         <>
             <main >
-                <div className='subpixel-antialiased dark:bg-boxdark-2 dark:text-bodydark'>
-                    <div className="relative flex flex-1 flex-col 
-                overflow-y-auto overflow-x-hidden">
-                        <Topbar />
-                        {/* <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10 min-h-screen grow 
+                <div suppressHydrationWarning={true} className='subpixel-antialiased dark:bg-boxdark-2 dark:text-bodydark relative flex flex-1 flex-col 
+                overflow-y-auto overflow-x-hidden'>
+                    <Topbar />
+                    {/* <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10 min-h-screen grow 
                         bg-[#F1F5F9]">
                             {children}
                         </div> */}
-                            {children}
-                        {/* Footer right here */}
-                        <Footer />
-                    </div>
+                    {children}
+                    {/* Footer right here */}
+                    <Footer />
                 </div>
             </main >
         </>

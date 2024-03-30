@@ -4,7 +4,7 @@ import Home from '@/pages/dashboard/home/Home'
 
 export default function Dashboard() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden" >
       <Topbar/>
       <Home />
       <Footer/>

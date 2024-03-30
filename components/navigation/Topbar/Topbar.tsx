@@ -125,7 +125,7 @@ const NavListMenu: React.FC<NavListMenuProps> = ({ generateHref }) => {
     );
 
     return (
-        <React.Fragment>
+        <React.Fragment >
             <Menu
                 open={isMenuOpen}
                 handler={setIsMenuOpen}
@@ -250,7 +250,6 @@ function NavList() {
 ${pathname === "/dashboard/home"}`}>
                 <Typography
                     as="a"
-                    href="#"
                     variant="small"
                     color="blue-gray"
                     className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
@@ -262,7 +261,6 @@ ${pathname === "/dashboard/home"}`}>
 ${pathname === "/dashboard/about"}`}>
                 <Typography
                     as="a"
-                    href="#"
                     variant="small"
                     color="blue-gray"
                     className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
@@ -275,7 +273,6 @@ ${pathname === "/dashboard/about"}`}>
 ${pathname === "/dashboard/zakat"}`}>
                 <Typography
                     as="a"
-                    href="#"
                     variant="small"
                     color="blue-gray"
                     className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
@@ -302,26 +299,40 @@ const Topbar = () => {
     }, []);
 
     return (
-        <Navbar className="mx-auto max-w-screen-xl px-4 py-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            <div className="flex items-center justify-between text-blue-gray-900">
-                <Link href={"/"}
-                    className={`group relative flex items-center gap-2.5 rounded-full px-4 py-2 font-medium duration-300 ease-in-out hover:bg-blue-gray-100/50 
+        <>
+            <Navbar suppressHydrationWarning={true} className="mx-auto max-w-screen-xl px-4 py-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                <div className="flex items-center justify-between text-blue-gray-900">
+                    <Link href={"/"}
+                        className={`group relative flex items-center gap-2.5 rounded-full px-4 py-2 font-medium duration-300 ease-in-out hover:bg-blue-gray-100/50 
 ${pathname === "/dashboard/home"}`}>
-                    <Image
+                        <Image
                             src={LAZSlogoname}
                             width={32}
                             height={32}
                             alt="Company Logo"
                         />
-                </Link>
-                <div className="hidden lg:block">
-                    <NavList />
+                    </Link>
+                    <div className="hidden lg:block">
+                        <NavList />
+                    </div>
+                    <IconButton
+                        variant="text"
+                        color="blue-gray"
+                        className="lg:hidden"
+                        onClick={() => setOpenNav(!openNav)}
+                    >
+                        {openNav ? (
+                            <CloseIcon className="h-6 w-6" strokeWidth={2} />
+                        ) : (
+                            <MenuIcon className="h-6 w-6" strokeWidth={2} />
+                        )}
+                    </IconButton>
                 </div>
-            </div>
-            <Collapse open={openNav}>
-                <NavList />
-            </Collapse>
-        </Navbar>
+                <Collapse open={openNav}>
+                    <NavList />
+                </Collapse>
+            </Navbar>
+        </>
     )
 }
 
