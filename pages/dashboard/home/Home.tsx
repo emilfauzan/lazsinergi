@@ -1,3 +1,9 @@
+"use client"
+import {
+    Input,
+    Typography,
+    Button
+} from '@material-tailwind/react'
 import React from 'react'
 
 function Home() {
@@ -9,6 +15,20 @@ function Home() {
                 <h2 className='my-4 text-center mx-6'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
                 <h2 className='my-4 text-center mx-6'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
             </div>
+
+            <header>
+                <div className="bg-[url('/images/herobackground.png')] bg-center bg-cover bg-no-repeat">
+                    <div className='grid grid-cols-2'>
+                        <div>
+                            <h2 className='my-4 text-center mx-6'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                        </div>
+                        <div>
+                            <h2 className='my-4 text-center mx-6'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
 
             {/* Tabel */}
             <div className='my-4 mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10'>
