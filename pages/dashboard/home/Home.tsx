@@ -53,10 +53,11 @@ function Home() {
 
             {/* Capaian */}
             <div className='my-4 mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10'>
-                <h2 className='my-4 text-center'>Capaian Kami</h2>
+                <Typography variant='lead' className='my-4 text-center' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Capaian Kami</Typography>
+
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
 
-                    <div className="bg-[url('/images/assets/ekonomi1.png')] bg-center bg-cover bg-no-repeat content-center">
+                    <div className="bg-[url('/images/assets/ekonomi1.png')] bg-center bg-cover bg-no-repeat content-center rounded-md">
                         <div className="bg-orange-100/50 h-full w-full justify-items-center">
                             <Typography variant='h3' className='pt-4 text-center px-4' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 <strong>11.751 </strong> orang
@@ -66,7 +67,8 @@ function Home() {
                             </Typography>
                         </div>
                     </div>
-                    <div className="bg-[url('/images/assets/murid1.jpeg')] bg-center bg-cover bg-no-repeat content-center">
+
+                    <div className="bg-[url('/images/assets/murid1.jpeg')] bg-center bg-cover bg-no-repeat content-center rounded-md">
                         <div className="bg-orange-100/50 h-full w-full justify-items-center">
                             <Typography variant='h3' className='pt-4 text-center px-4' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 <strong>24.125 </strong> orang
@@ -76,7 +78,8 @@ function Home() {
                             </Typography>
                         </div>
                     </div>
-                    <div className="bg-[url('/images/assets/mitra1.png')] bg-center bg-cover bg-no-repeat content-center">
+
+                    <div className="bg-[url('/images/assets/mitra1.png')] bg-center bg-cover bg-no-repeat content-center rounded-md">
                         <div className="bg-orange-100/50 h-full w-full justify-items-center">
                             <Typography variant='h3' className='pt-4 text-center px-4' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                                 Sebanyak <strong>16 </strong>
@@ -87,16 +90,29 @@ function Home() {
                         </div>
                     </div>
 
-
                 </div>
             </div>
 
             {/* Hubungi */}
             <div className='my-4 mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10 '>
-                <h2 className='my-4 text-center'>Lorem, ipsum.</h2>
+                <Typography variant='lead' className='my-4 text-center' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Hubungi Kami</Typography>
                 <div className='grid grid-cols-2 gap-6'>
-                    <h2 className='py-4 text-center bg-green-100/50 '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
-                    <h2 className='py-4 text-center bg-[#F1F5F9]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                    <div className="bg-[url('/images/assets/20.png')] bg-center bg-cover bg-no-repeat rounded-md ">
+                        <div className="bg-green-100/50 h-full justify-items-center">
+                        </div>
+                    </div>
+                    <div className='bg-[#F1F5F9]'>
+                        <Typography variant='paragraph' className='mx-4 my-6' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                            Silahkan hubungi kami untuk informasi lebih lanjut.
+                        </Typography>
+                        <div className='flex mx-4 my-6'>
+
+                            <Typography variant='h6' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}> Admin Sinergi <br /> +62 853 4968 8826 </Typography>
+                            <Typography variant='paragraph' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                (via WhatsApp)
+                            </Typography>
+                        </div>
+                    </div>
                 </div>
             </div>
 
