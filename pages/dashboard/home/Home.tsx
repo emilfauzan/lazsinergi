@@ -54,27 +54,39 @@ function Home() {
             {/* Capaian */}
             <div className='my-4 mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10'>
                 <h2 className='my-4 text-center'>Capaian Kami</h2>
-                <div className='grid grid-cols-3 gap-6'>
-                    <div>
-                        <div className="bg-[url('/images/herobackground.png')] bg-center bg-cover bg-no-repeat">
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
 
-                            <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                    <div className="bg-[url('/images/assets/ekonomi1.png')] bg-center bg-cover bg-no-repeat content-center">
+                        <div className="bg-orange-100/50 h-full w-full justify-items-center">
+                            <Typography variant='h3' className='pt-4 text-center px-4' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                <strong>11.751 </strong> orang
+                            </Typography>
+                            <Typography variant='lead' className='pb-4 text-center px-4' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                Jumlah <strong>Muzzaki & Munfiq </strong>
+                            </Typography>
+                        </div>
+                    </div>
+                    <div className="bg-[url('/images/assets/murid1.jpeg')] bg-center bg-cover bg-no-repeat content-center">
+                        <div className="bg-orange-100/50 h-full w-full justify-items-center">
+                            <Typography variant='h3' className='pt-4 text-center px-4' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                <strong>24.125 </strong> orang
+                            </Typography>
+                            <Typography variant='lead' className='pb-4 text-center px-4' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                Jumlah <strong>Mustahik </strong>
+                            </Typography>
+                        </div>
+                    </div>
+                    <div className="bg-[url('/images/assets/mitra1.png')] bg-center bg-cover bg-no-repeat content-center">
+                        <div className="bg-orange-100/50 h-full w-full justify-items-center">
+                            <Typography variant='h3' className='pt-4 text-center px-4' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                Sebanyak <strong>16 </strong>
+                            </Typography>
+                            <Typography variant='lead' className='pb-4 text-center px-4' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                Jumlah <strong>Mitra </strong>
+                            </Typography>
                         </div>
                     </div>
 
-                    <div>
-                        <div className="bg-[url('/images/herobackground.png')] bg-center bg-cover bg-no-repeat">
-
-                            <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div className="bg-[url('/images/herobackground.png')] bg-center bg-cover bg-no-repeat">
-
-                            <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
-                        </div>
-                    </div>
 
                 </div>
             </div>
