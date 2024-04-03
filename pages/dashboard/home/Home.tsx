@@ -1,9 +1,10 @@
 "use client"
-import {
-    Input,
-    Typography,
-    Button
-} from '@material-tailwind/react'
+import { Typography } from '@material-tailwind/react'
+import { Button } from '@mui/material'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LAZSlogonametagline5 from "@/public/images/companyLogo/LAZSlogonametagline5.png";
+import Image from 'next/image';
+
 import React from 'react'
 
 function Home() {
@@ -13,12 +14,29 @@ function Home() {
             {/* Hero */}
             <header>
                 <div className="bg-[url('/images/herobackground.png')] bg-center bg-cover bg-no-repeat">
-                    <div className='grid grid-cols-2 bg-green-100/50'>
-                        <div>
-                            <h2 className='my-4 text-center mx-6'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
-                        </div>
-                        <div>
-                            <h2 className='my-4 text-center mx-6'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                    <div className=' bg-green-500/50'>
+                        <div className='mb-4 mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10 grid grid-cols-2'>
+                            <div>
+                                <Typography variant='h1' color='white' className='my-4 mx-8' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}><strong> Sedekah</strong> yang <br /><strong>Amanah</strong></Typography>
+                                <Typography color='white' style={{ fontStyle: 'italic' }} className='my-4 mx-8' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>lazsinergi.org</Typography>
+                                <div className=' items-center'>
+                                    <div className='mx-8 my-4 py-2'>
+                                        <Button variant="contained" startIcon={<WhatsAppIcon />} color='success' size="large" className='px-6 font-semibold'>Hubungi Kami</Button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='content-center m-auto'>
+                                <div className='px-6 mx-2 py-4'>
+                                    <Image
+                                        src={LAZSlogonametagline5}
+                                        width={192}
+                                        height={192}
+                                        sizes="(max-width: 768px) 100vw, 33vw"
+                                        quality={100}
+                                        alt="Company Logo"
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -26,20 +44,38 @@ function Home() {
 
 
             {/* Tabel */}
-            <div className='my-4 mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10'>
+            {/* <div className='my-4 mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10'>
                 <h2 className='my-4 text-center'>Lorem, ipsum.</h2>
                 <div className='grid grid-cols-1'>
                     <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, enim eaque? Adipisci ad excepturi quidem distinctio repellat iure aliquid temporibus, debitis consequatur reiciendis optio quod, sit dolorum earum repellendus. Dolorum, tenetur tempore quia veniam aspernatur odit ad quibusdam cumque accusamus reiciendis? Dolor dolorem eligendi quibusdam sapiente! Quis voluptas incidunt iste, repellat quibusdam a fugiat. Dolorum, ipsam consequatur cupiditate corporis accusamus deleniti! Vero veniam corporis, dolores praesentium quasi nostrum facilis eligendi sunt dolorum saepe, consequuntur reprehenderit doloribus quidem repudiandae unde, aliquid fugiat quaerat velit? Praesentium impedit veniam aliquid dolore, nam, quae quisquam animi eaque tenetur rem recusandae quidem at dicta consequuntur!</h2>
                 </div>
-            </div>
+            </div> */}
 
             {/* Capaian */}
             <div className='my-4 mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10'>
-                <h2 className='my-4 text-center'>Lorem, ipsum.</h2>
+                <h2 className='my-4 text-center'>Capaian Kami</h2>
                 <div className='grid grid-cols-3 gap-6'>
-                    <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
-                    <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
-                    <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                    <div>
+                        <div className="bg-[url('/images/herobackground.png')] bg-center bg-cover bg-no-repeat">
+
+                            <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className="bg-[url('/images/herobackground.png')] bg-center bg-cover bg-no-repeat">
+
+                            <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className="bg-[url('/images/herobackground.png')] bg-center bg-cover bg-no-repeat">
+
+                            <h2 className='py-4 text-center bg-orange-100/50 px-4'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

@@ -319,8 +319,7 @@ ${pathname === "/dashboard/home"}`}>
                         variant="text"
                         color="blue-gray"
                         className="lg:hidden"
-                        onClick={() => setOpenNav(!openNav)}
-                    >
+                        onClick={() => setOpenNav(!openNav)} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                    >
                         {openNav ? (
                             <CloseIcon className="h-6 w-6" strokeWidth={2} />
                         ) : (
