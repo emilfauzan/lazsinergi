@@ -4,7 +4,7 @@ import { Button } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LAZSlogonametagline5 from "@/public/images/companyLogo/LAZSlogonametagline5.png";
 import Image from 'next/image';
-
+import WarningAmberRoundedIcon from '@mui/icons-material/WarningAmberRounded';
 import React from 'react'
 
 function Home() {
@@ -120,7 +120,7 @@ function Home() {
             <Typography variant='lead' className='mt-4 text-center' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Mitra Kami</Typography>
             <div className='grid grid-cols-1 pb-4 my-4'>
                 <Carousel
-                    className="rounded-xl mb-4" loop autoplay autoplayDelay={5000} 
+                    className="rounded-xl mb-4" loop autoplay autoplayDelay={5000}
                     navigation={({ setActiveIndex, activeIndex, length }) => (
                         <div className="absolute bottom-2 left-2/4 z-50 flex -translate-x-2/4 gap-2">
                             {new Array(length).fill("").map((_, i) => (
@@ -213,17 +213,22 @@ function Home() {
                             className="max-h-32 m-auto"
                         />
                     </div>
-
-
-
                 </Carousel>
             </div>
 
             {/* Warning */}
-            <div className='grid grid-cols-1'>
-                <h2 className='py-4 text-center bg-orange-400/80'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
-            </div>
+            <div className='bg-orange-400/80'>
+                <div className='my-4 mx-auto max-w-screen-2xl p-4 md:p-6 flex items-center justify-center'>
+                    <div className=''>
+                        <WarningAmberRoundedIcon fontSize='large' />
+                    </div>
+                    <Typography variant='h6' className='ml-4' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                        PERHATIAN! <br />
+                        LAZ SINERGI tidak menerima dana donasi dari dana pencurian, cuci uang, dan dana yang dilarang oleh syariat.
+                    </Typography>
+                </div>
 
+            </div>
         </>
     )
 }
