@@ -117,45 +117,105 @@ function Home() {
             </div>
 
             {/* Mitra */}
-            <Typography variant='lead' className='my-4 text-center' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Mitra Kami</Typography>
-            <div className='grid grid-cols-1 pb-4'>
-                <h2 className='py-4 text-center bg-[#F1F5F9]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci enim a amet modi doloremque repellendus distinctio sit fugiat obcaecati debitis.</h2>
+            <Typography variant='lead' className='mt-4 text-center' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Mitra Kami</Typography>
+            <div className='grid grid-cols-1 pb-4 my-4'>
                 <Carousel
-                    className="rounded-xl" loop
+                    className="rounded-xl mb-4" loop autoplay autoplayDelay={5000} 
                     navigation={({ setActiveIndex, activeIndex, length }) => (
-                        <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+                        <div className="absolute bottom-2 left-2/4 z-50 flex -translate-x-2/4 gap-2">
                             {new Array(length).fill("").map((_, i) => (
                                 <span
                                     key={i}
-                                    className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"}`}
+                                    className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-black" : "w-4 bg-black/40"}`}
                                     onClick={() => setActiveIndex(i)} />
                             ))}
                         </div>
                     )} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                >
-                    
-                    <div className='grid grid-cols-2 gap-3 my-4 mx-6 items-center'>
+
+                    <div className='grid grid-cols-2 md:grid-cols-6 gap-4 my-4 mx-12 justify-items-center align-items-center m-auto'>
                         <img
-                            src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-                            alt="image 1"
+                            src="/images/assets/mitraperusahaan/pertamina.png"
+                            alt="pertamina"
+                            className="max-h-32 m-auto"
                         />
                         <img
-                            src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-                            alt="image 2"
+                            src="/images/assets/mitraperusahaan/trakindocat.png"
+                            alt="trakindocat"
+                            className="max-h-32 m-auto"
+                        />
+                        <img
+                            src="/images/assets/mitraperusahaan/pemda.png"
+                            alt="pemda"
+                            className="max-h-32 m-auto"
+                        />
+                        <img
+                            src="/images/assets/mitraperusahaan/dkmpama.png"
+                            alt="dkmpama"
+                            className="max-h-32 m-auto"
+                        />
+                        <img
+                            src="/images/assets/mitraperusahaan/pama.png"
+                            alt="pama"
+                            className="max-h-32 m-auto"
+                        />
+                        <img
+                            src="/images/assets/mitraperusahaan/sucofindo.png"
+                            alt="sucofindo"
+                            className="max-h-32 m-auto"
                         />
                     </div>
-                    <div className='grid grid-cols-2 gap-3 my-4 mx-6 items center'>
+                    <div className='grid grid-cols-2 md:grid-cols-6 gap-4 my-4 mx-12 justify-items-center align-items-center'>
                         <img
-                            src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-                            alt="image 3"
-                            className="h-full w-full object-cover"
+                            src="/images/assets/mitraperusahaan/indexim.png"
+                            alt="indexim"
+                            className="max-h-32 m-auto"
                         />
                         <img
-                            src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-                            alt="image 3"
-                            className="h-full w-full object-cover"
+                            src="/images/assets/mitraperusahaan/kpc.png"
+                            alt="kpc"
+                            className="max-h-32 m-auto"
+                        />
+                        <img
+                            src="/images/assets/mitrayayasan/bmmqa.png"
+                            alt="bmmqa"
+                            className="max-h-32 m-auto"
+                        />
+                        <img
+                            src="/images/assets/mitrayayasan/dpu.png"
+                            alt="dpu"
+                            className="max-h-32 m-auto"
+                        />
+                        <img
+                            src="/images/assets/mitrayayasan/kutimaction.png"
+                            alt="kutimaction"
+                            className="max-h-32 m-auto"
+                        />
+                        <img
+                            src="/images/assets/mitrayayasan/paqusata.png"
+                            alt="paqusata"
+                            className="max-h-32 m-auto"
                         />
                     </div>
-                    
+                    <div className='grid grid-cols-2 md:grid-cols-3 gap-4 my-4 mx-12 justify-items-center align-items-center'>
+                        <img
+                            src="/images/assets/mitrayayasan/sangatta.png"
+                            alt="sangatta"
+                            className="max-h-32 m-auto"
+                        />
+                        <img
+                            src="/images/assets/mitrayayasan/salimah.png"
+                            alt="salimah"
+                            className="max-h-32 m-auto"
+                        />
+                        <img
+                            src="/images/assets/mitrayayasan/upzisdaarsa.png"
+                            alt="upzisdaarsa"
+                            className="max-h-32 m-auto"
+                        />
+                    </div>
+
+
+
                 </Carousel>
             </div>
 
