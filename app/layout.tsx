@@ -19,7 +19,6 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
       </body>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd3vEtbnKvX6rxi1prBGYzPH5ksV3Clww"></script>
     </html>
   );
 }

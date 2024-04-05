@@ -53,7 +53,7 @@ const Footer = () => {
                         </Typography>
 
                         <div className='mx-4 my-6'>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6489127937493!2d117.53289487494048!3d0.527993999466843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x320a35b5f8cd94d5%3A0x4073d181d20e9b1a!2sLAZ%20SINERGI!5e0!3m2!1sen!2sid!4v1712294616794!5m2!1sen!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                         </div>
 
                         <Typography variant='body2' className='text-center md:text-left my-4'>
